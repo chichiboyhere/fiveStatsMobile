@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet, Alert, ScrollView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, FlatList, Alert, ScrollView } from 'react-native';
+import styles from "./styles"
 
 const MeasuresOfDispersionGrouped = () => {
   const [data, setData] = useState([{id:1, lower: "", upper: "", frequency: "" }]);
@@ -120,7 +121,11 @@ const MeasuresOfDispersionGrouped = () => {
     <ScrollView contentContainerStyle={styles.container}>
         <Text style={styles.header}> Range, Mean, Mean Deviation, Variance, Standard Deviation (Grouped Data)
         Calculator</Text>
-
+        <View style={styles.subHeader}>
+          <Text style={styles.subHeaderText}>Lower</Text>
+          <Text style={styles.subHeaderText}>Upper</Text>
+          <Text style={styles.subHeaderText}>Frequency</Text>
+        </View>
         <FlatList
             data={data}
             keyExtractor={(item) => item.id.toString()}
@@ -212,97 +217,5 @@ const MeasuresOfDispersionGrouped = () => {
     </ScrollView>
   );
 };
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-  },
-  header: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-    textAlign: 'center',
-  },
-  row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 5,
-    padding: 10,
-    marginRight: 10,
-    flex: 1,
-    color: 'white',
-    textAlign: 'center',
-    fontSize: 18
-  },
-  invalidInputMsg: {
-    marginTop: 16,
-    fontSize: 18,
-    lineHeight: 28,
-    color: "red"
-  },
-  removeButton: {
-    backgroundColor: 'red',
-    padding: 10,
-    borderRadius: 5,
-  },
-  removeButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-  },
-  addButton: {
-    backgroundColor: 'blue',
-    padding: 10,
-    borderRadius: 5,
-    marginVertical: 10,
-    alignItems: 'center',
-  },
-  addButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
-  buttonContainer: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    paddingHorizontal: 8
-  },
-  calcButton: {
-    width: "45%",
-    backgroundColor: "green",
-    padding: 8,
-    color: "white",
-    borderRadius: 4,
-    marginRight: 8,
-    justifyContent: "center",
-    alignItems: "center", 
-  },
-  resetButton: {
-    width:"45%",
-    backgroundColor: "#eab308",
-    color: "white",
-    padding: 8,
-    borderRadius:4,
-    justifyContent: "center",
-    alignItems: "center",
-    },
-  outputContainer: {
-    padding:16,
-    marginTop: 16,
-    backgroundColor: "#dcfce7",
-    borderWidth: 1,
-    borderColor: "#4ade80",
-    borderRadius: 4
-    },
-  outputText: {
-    fontSize: 20,
-    lineHeight: 28,
-    fontWeight: '600',
-    color: "blue"
-    }
-});
+
 export default MeasuresOfDispersionGrouped;

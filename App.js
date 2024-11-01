@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MeasuresOfCentralTendencyGrouped from './screens/MeasuresOfCentralTendencyGrouped';
@@ -7,7 +7,6 @@ import MeasuresOfCentralTendencyUngroupedRaw from './screens/MeasuresOfCentralTe
 import MeasuresOfCentralTendencyUngroupedTabulated from './screens/MeasuresOfCentralTendencyUngroupedTabulated';
 import MeasuresOfDispersionGrouped from './screens/MeasuresOfDispersionGrouped';
 import MeasuresOfDispersionUngrouped from './screens/MeasuresOfDispersionUngrouped';
-
 import Topics from './screens/Topics'
 
 const Stack = createNativeStackNavigator();
@@ -18,9 +17,9 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
-            headerStyle: { backgroundColor: '#351401' },
+            headerStyle: { backgroundColor: '#28231D' },
             headerTintColor: 'white',
-            contentStyle: { backgroundColor: '#3f2f25' },
+            contentStyle: { backgroundColor: 'black' },
           }}
         >
          <Stack.Screen
@@ -67,9 +66,13 @@ export default function App() {
               title: 'Measures Of Dispersion Grouped',
             }}
           />
+
         
         </Stack.Navigator>
+        
         </NavigationContainer>
+       
+        {/* <Footer /> */}
     </>
   );
 }
@@ -80,5 +83,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
+  
 });

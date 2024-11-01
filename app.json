@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "fiveState",
-    "slug": "fiveState",
+    "slug": "fivestats",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,6 +22,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b9eff480-e345-476a-8246-914e71f6133f"
+      }
+    },
+    "owner": "chichiboyhere"
   }
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import {View, Text, StyleSheet, TouchableOpacity, TextInput} from "react-native"
+import {View, Text,  TouchableOpacity, TextInput} from "react-native"
+import styles from "./styles";
 
 const MeasuresOfCentralTendencyUngroupedRaw = () => {
   const [input, setInput] = useState("");
@@ -91,13 +92,13 @@ const MeasuresOfCentralTendencyUngroupedRaw = () => {
           onPress={handleDataProcessing}
           style={styles.calcButton}
         >
-          <Text>Calculate</Text>
+          <Text style={styles.addButtonText}>Calculate</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={handleReset}
           style={styles.resetButton}
         >
-          <Text>Reset</Text>
+          <Text style={styles.addButtonText}>Reset</Text>
         </TouchableOpacity>
       </View>
       {invalidInput && (
@@ -126,69 +127,3 @@ const MeasuresOfCentralTendencyUngroupedRaw = () => {
 };
 
 export default MeasuresOfCentralTendencyUngroupedRaw;
-const styles = StyleSheet.create({
-    container: {
-        padding: 20
-    },
-    header: {
-        fontSize: 24,
-        lineHeight: 32,
-        fontWeight: '700',
-        marginBottom: 16,
-        color: "white"
-    },
-    textInput: {
-        width: "100%",
-        padding: 8,
-        borderWidth: 1,
-        borderColor: "#d1d5db",
-        borderRadius: 4,
-        marginBottom: 16,
-        color: "white"
-    },
-    buttonContainer: {
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        paddingHorizontal: 8
-    },
-    calcButton: {
-        width: "45%",
-        backgroundColor: "#3b82f6",
-        padding: 8,
-        color: "white",
-        borderRadius: 4,
-        marginRight: 8,
-        justifyContent: "center",
-        alignItems: "center"
-    },
-    resetButton: {
-        width:"45%",
-        backgroundColor: "#eab308",
-        color: "white",
-        padding: 8,
-        borderRadius:4,
-        justifyContent: "center",
-        alignItems: "center"
-    },
-    invalidInputMsg: {
-        marginTop: 16,
-        fontSize: 18,
-        lineHeight: 28,
-        color: "red"
-    },
-    outputContainer: {
-        padding:16,
-        marginTop: 16,
-        backgroundColor: "#dcfce7",
-        borderWidth: 1,
-        borderColor: "#4ade80",
-        borderRadius: 4
-    },
-    outputText: {
-        fontSize: 20,
-        lineHeight: 28,
-        fontWeight: '600',
-        color: "blue"
-    }
-})
